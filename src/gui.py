@@ -5,9 +5,11 @@ from autohotkey import AutoHotkey
 class Gui(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("AutoHotkey WH")
+        self.title("AutoHotkey Clicker")
         self.geometry("400x300+300+150")
         self.resizable(False, False)
+        
+        self.iconbitmap("static/favicon.ico")
 
         self.key_var = tk.StringVar()
         self.speed_var = tk.StringVar(value="Slow")
