@@ -9,7 +9,7 @@ class Gui(tk.Tk):
         self.geometry("400x300+300+150")
         self.resizable(False, False)
         
-        self.iconbitmap("static/favicon.ico")
+        # self.iconbitmap("static/favicon.ico")
 
         self.key_var = tk.StringVar()
         self.speed_var = tk.StringVar(value="Slow")
