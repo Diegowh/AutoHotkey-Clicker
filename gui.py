@@ -1,4 +1,6 @@
 import tkinter as tk
+import threading
+from autohotkey import AutoHotkey
 
 class Gui(tk.Tk):
     def __init__(self):
@@ -49,5 +51,7 @@ class Gui(tk.Tk):
         self.saved_toggle_key = self.toggle_key_var.get()
         print(f"Key saved: {self.saved_key}, Speed: {self.saved_speed}, Toggle Key: {self.saved_toggle_key}")
 
-app = Gui()
-app.mainloop()
+        self.autohotkey = AutoHotkey(self.saved_key, self.saved_toggle_key, self.saved_speed)
+
+        # Inicia el autoclicker en un nuevo hilo
+        threading.Thread(target=self.autohotkey.start).start()

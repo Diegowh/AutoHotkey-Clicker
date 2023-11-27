@@ -1,23 +1,14 @@
-import keyboard
-import time
+from gui import Gui
 
-key = "a"
-frequency = 1
 
 class AutoHotkeyClicker:
-    
-    def __init__(self, key: str, key_bind: str,  delay: int) -> None:
-        self.key = key
-        self.delay = delay
+    def __init__(self) -> None:
+        self.gui = Gui()
         
-    def start(self):
-        for _ in range(5):
-            keyboard.press_and_release(self.key)
-            time.sleep(self.frequency)
-            
-            
-
-
+    def run(self):
+        self.gui.mainloop()
+        
+        
 if __name__ == "__main__":
-    clicker = AutoHotkeyClicker(key, frequency, 1)
-    clicker.start()
+    app = AutoHotkeyClicker()
+    app.run()
